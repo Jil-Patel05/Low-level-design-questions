@@ -9,6 +9,7 @@ namespace ParkingPlotDesign
 {
     public class ParkingPlot
     {
+        // Plot size ie here
         private List<Plot> plots = new List<Plot>();
         private static ParkingPlot instance;
         private static object obj = new object();
