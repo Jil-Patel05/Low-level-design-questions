@@ -1,0 +1,1 @@
+Here is parking plot design description how to think it -- TRY common approach of this in all patterns.
