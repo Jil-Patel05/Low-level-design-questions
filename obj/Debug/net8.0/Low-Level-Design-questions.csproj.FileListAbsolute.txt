@@ -1,0 +1,15 @@
+D:\Low-Level-Design-questions\bin\Debug\net8.0\Low-Level-Design-questions.exe
+D:\Low-Level-Design-questions\bin\Debug\net8.0\Low-Level-Design-questions.deps.json
+D:\Low-Level-Design-questions\bin\Debug\net8.0\Low-Level-Design-questions.runtimeconfig.json
+D:\Low-Level-Design-questions\bin\Debug\net8.0\Low-Level-Design-questions.dll
+D:\Low-Level-Design-questions\bin\Debug\net8.0\Low-Level-Design-questions.pdb
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.AssemblyInfoInputs.cache
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.AssemblyInfo.cs
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.csproj.CoreCompileInputs.cache
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.sourcelink.json
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.dll
+D:\Low-Level-Design-questions\obj\Debug\net8.0\refint\Low-Level-Design-questions.dll
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.pdb
+D:\Low-Level-Design-questions\obj\Debug\net8.0\Low-Level-Design-questions.genruntimeconfig.cache
+D:\Low-Level-Design-questions\obj\Debug\net8.0\ref\Low-Level-Design-questions.dll
