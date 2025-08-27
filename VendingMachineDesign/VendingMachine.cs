@@ -48,7 +48,7 @@ namespace Low_Level_Design_questions.VendingMachineDesign
             shelfs.Add(shelf);
         }
 
-        public bool isIdPresentInShelf(string id)
+        private bool isIdPresentInShelf(string id)
         {
             Shelf? sh = shelfs.FirstOrDefault(elm => elm.shelfId == id);
             return sh != null;
@@ -88,6 +88,10 @@ namespace Low_Level_Design_questions.VendingMachineDesign
                         princeOfCurrentItem = (double)quantity * sh.product.productPrice;
                         this.curerntState.nextState(this);
                     }
+                    else
+                    {
+                        Console.WriteLine("No present");
+                    }
                 }
             }
         }
@@ -96,6 +100,7 @@ namespace Low_Level_Design_questions.VendingMachineDesign
         {
             if (this.curerntState is PaymentState)
             {
+                this.selectedQuantity = number;
                 princeOfCurrentItem = (double)number * this.selectedProduct.productPrice;
             }
         }
@@ -141,6 +146,7 @@ namespace Low_Level_Design_questions.VendingMachineDesign
                 {
                     this.selectedProduct.setProductQuantity(this.selectedQuantity);
                     this.curerntState.nextState(this);
+                    this.dispatchItem();
                 }
             }
             catch (Exception ex)
@@ -177,6 +183,17 @@ namespace Low_Level_Design_questions.VendingMachineDesign
                 this.setCurrentState(new CancelState());
                 // Perform cancel activity here
                 this.cancelAllThing();
+            }
+        }
+
+        public void displayItems()
+        {
+            foreach (Shelf item in shelfs)
+            {
+                Console.WriteLine("One product");
+                Console.WriteLine(item.shelfId);
+                Console.WriteLine(item.product.productName);
+                Console.WriteLine(item.product.quantity);
             }
         }
     }

@@ -48,6 +48,14 @@ namespace Program
             v.addShelfs(s2);
             v.addShelfs(s3);
             v.addShelfs(s4);
+
+            v.startButtonClicked();
+            v.enteredId("1", 1);
+            v.setItems(2);
+            v.purchaseProduct(PAYMENT_STRATEGIES.UPI_PAYMENT);
+            // v.displayItems();
+            v.startButtonClicked();
+            v.enteredId("1", 1);
         }
     }
 
