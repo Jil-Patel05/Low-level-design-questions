@@ -1,4 +1,5 @@
 ﻿using LLD_questions.ParkingPlotDesign;
+using Low_Level_Design_questions.VendingMachineDesign;
 using ParkingPlotDesign;
 
 namespace Program
@@ -7,6 +8,7 @@ namespace Program
     {
         public static void Main(string[] args)
         {
+            // Parking plot design
             // Plot p1 = new Plot(PLOT_TYPE.CAR, 1, 1);
             // Plot p2 = new Plot(PLOT_TYPE.BIKE, 2, 1);
             // Plot p3 = new Plot(PLOT_TYPE.CAR, 1, 2);
@@ -28,7 +30,24 @@ namespace Program
             // p.addVehicle(v3);
             // p.addVehicle(v4);
 
-            
+            // Vending machine
+            Product p1 = new Product("A", 1, 2);
+            Product p2 = new Product("B", 2, 2);
+            Product p3 = new Product("C", 3, 2);
+            Product p4 = new Product("D", 4, 2);
+
+            Shelf s1 = new Shelf(p1, "1");
+            Shelf s2 = new Shelf(p2, "2");
+            Shelf s3 = new Shelf(p3, "3");
+            Shelf s4 = new Shelf(p4, "4");
+
+            VendingMachine v = VendingMachine.getInstance();
+            v.initializeMachine();
+
+            v.addShelfs(s1);
+            v.addShelfs(s2);
+            v.addShelfs(s3);
+            v.addShelfs(s4);
         }
     }
 
