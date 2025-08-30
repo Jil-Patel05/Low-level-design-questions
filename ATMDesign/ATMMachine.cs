@@ -99,6 +99,7 @@ namespace Low_Level_Design_questions.ATMDesign
             {
                 Console.WriteLine($"Money item {item.Key} of {item.Value}");
             }
+            this.currentState.nextState(this);
         }
         private void viewBalance()
         {
