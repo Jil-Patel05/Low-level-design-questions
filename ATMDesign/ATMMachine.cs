@@ -16,7 +16,7 @@ namespace Low_Level_Design_questions.ATMDesign
         private Account account;
         private IState currentState;
         private ATMMachineInv anv;
-        private Dictionary<CASH_TYPE, int> moneyToReturn;
+        private Dictionary<int, int> moneyToReturn;
 
         public ATMMachine()
         {
@@ -93,9 +93,14 @@ namespace Low_Level_Design_questions.ATMDesign
             }
         }
 
+        public void addCash(int cashType, int number)
+        {
+            this.anv.addCash(cashType, number);
+        }
+
         private void dispachMoney()
         {
-            foreach (KeyValuePair<CASH_TYPE, int> item in this.moneyToReturn)
+            foreach (KeyValuePair<int, int> item in this.moneyToReturn)
             {
                 Console.WriteLine($"Money item {item.Key} of {item.Value}");
             }
@@ -106,6 +111,7 @@ namespace Low_Level_Design_questions.ATMDesign
             if (this.currentState is ProcessOperationState)
             {
                 Console.WriteLine($"Your current balance is {this.account.money}");
+                this.setCurrentState(new IdleState());
             }
         }
 
