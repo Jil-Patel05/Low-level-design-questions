@@ -31,31 +31,33 @@ namespace Program
             // p.addVehicle(v4);
 
             // Vending machine
-            Product p1 = new Product("A", 1, 2);
-            Product p2 = new Product("B", 2, 2);
-            Product p3 = new Product("C", 3, 2);
-            Product p4 = new Product("D", 4, 2);
+            // Product p1 = new Product("A", 1, 2);
+            // Product p2 = new Product("B", 2, 2);
+            // Product p3 = new Product("C", 3, 2);
+            // Product p4 = new Product("D", 4, 2);
 
-            Shelf s1 = new Shelf(p1, "1");
-            Shelf s2 = new Shelf(p2, "2");
-            Shelf s3 = new Shelf(p3, "3");
-            Shelf s4 = new Shelf(p4, "4");
+            // Shelf s1 = new Shelf(p1, "1");
+            // Shelf s2 = new Shelf(p2, "2");
+            // Shelf s3 = new Shelf(p3, "3");
+            // Shelf s4 = new Shelf(p4, "4");
 
-            VendingMachine v = VendingMachine.getInstance();
-            v.initializeMachine();
+            // VendingMachine v = VendingMachine.getInstance();
+            // v.initializeMachine();
 
-            v.addShelfs(s1);
-            v.addShelfs(s2);
-            v.addShelfs(s3);
-            v.addShelfs(s4);
+            // v.addShelfs(s1);
+            // v.addShelfs(s2);
+            // v.addShelfs(s3);
+            // v.addShelfs(s4);
 
-            v.startButtonClicked();
-            v.enteredId("1", 1);
-            v.setItems(2);
-            v.purchaseProduct(PAYMENT_STRATEGIES.UPI_PAYMENT);
-            // v.displayItems();
-            v.startButtonClicked();
-            v.enteredId("1", 1);
+            // v.startButtonClicked();
+            // v.enteredId("1", 1);
+            // v.setItems(2);
+            // v.purchaseProduct(PAYMENT_STRATEGIES.UPI_PAYMENT);
+            // // v.displayItems();
+            // v.startButtonClicked();
+            // v.enteredId("1", 1);
+
+            // ATM Machine
         }
     }
 
