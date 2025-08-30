@@ -79,6 +79,7 @@ namespace Low_Level_Design_questions.ATMDesign
                     if (moneyToReturn != null)
                     {
                         this.currentState.nextState(this);
+                        this.dispachMoney();
                     }
                     else
                     {
