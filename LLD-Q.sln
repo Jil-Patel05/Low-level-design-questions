@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLD-Q", "LLD-Q.csproj", "{1B312C89-387C-4EE8-B9B9-F72B8570EC85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B312C89-387C-4EE8-B9B9-F72B8570EC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B312C89-387C-4EE8-B9B9-F72B8570EC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B312C89-387C-4EE8-B9B9-F72B8570EC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B312C89-387C-4EE8-B9B9-F72B8570EC85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F19D02D2-66B6-4451-A1C7-B8C021422C3B}
+	EndGlobalSection
+EndGlobal
