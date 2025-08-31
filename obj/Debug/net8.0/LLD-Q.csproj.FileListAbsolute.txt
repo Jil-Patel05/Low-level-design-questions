@@ -1,0 +1,15 @@
+D:\LLD-Q\bin\Debug\net8.0\LLD-Q.exe
+D:\LLD-Q\bin\Debug\net8.0\LLD-Q.deps.json
+D:\LLD-Q\bin\Debug\net8.0\LLD-Q.runtimeconfig.json
+D:\LLD-Q\bin\Debug\net8.0\LLD-Q.dll
+D:\LLD-Q\bin\Debug\net8.0\LLD-Q.pdb
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.GeneratedMSBuildEditorConfig.editorconfig
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.AssemblyInfoInputs.cache
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.AssemblyInfo.cs
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.csproj.CoreCompileInputs.cache
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.sourcelink.json
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.dll
+D:\LLD-Q\obj\Debug\net8.0\refint\LLD-Q.dll
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.pdb
+D:\LLD-Q\obj\Debug\net8.0\LLD-Q.genruntimeconfig.cache
+D:\LLD-Q\obj\Debug\net8.0\ref\LLD-Q.dll

@@ -25,6 +25,17 @@ namespace LLD_Q.LoggingDesign
             this.nextLog = log;
         }
         public abstract string logMessage(string message, LOG_TYPE logType);
+        public string logDifferentMessage(string message, LOG_TYPE logType)
+        {
+            string logMessage = "";
+            logMessage += DateTime.Now.ToString();
+            logMessage += " ";
+            logMessage += $"[{logType}]";
+            logMessage += " ";
+            logMessage += message;
+
+            return logMessage;
+        }
     }
 
     public class InfoLog : Log
@@ -36,11 +47,7 @@ namespace LLD_Q.LoggingDesign
         {
             if (logType == LOG_TYPE.INFO)
             {
-                string logMessage = "";
-                logMessage += DateTime.Now.ToString();
-                logMessage += $"[logType]";
-                logMessage += message;
-                return logMessage;
+                return this.logDifferentMessage(message, logType);
             }
             else
             {
@@ -57,12 +64,7 @@ namespace LLD_Q.LoggingDesign
         {
             if (logType == LOG_TYPE.DEBUG)
             {
-                string logMessage = "";
-                logMessage += DateTime.Now.ToString();
-                logMessage += $"[logType]";
-                logMessage += message;
-                return logMessage;
-
+                return this.logDifferentMessage(message, logType);
             }
             else
             {
@@ -79,11 +81,7 @@ namespace LLD_Q.LoggingDesign
         {
             if (logType == LOG_TYPE.ERROR)
             {
-                string logMessage = "";
-                logMessage += DateTime.Now.ToString();
-                logMessage += $"[logType]";
-                logMessage += message;
-                return logMessage;
+                return this.logDifferentMessage(message, logType);
             }
             else
             {
@@ -98,13 +96,9 @@ namespace LLD_Q.LoggingDesign
         }
         public override string logMessage(string message, LOG_TYPE logType)
         {
-            if (logType == LOG_TYPE.INFO)
+            if (logType == LOG_TYPE.WARNING)
             {
-                string logMessage = "";
-                logMessage += DateTime.Now.ToString();
-                logMessage += $"[logType]";
-                logMessage += message;
-                return logMessage;
+                return this.logDifferentMessage(message, logType);
             }
             else
             {

@@ -1,0 +1,4 @@
+31-08-2025 16:14:31 [INFO] Hey info
+31-08-2025 16:14:31 [DEBUG] Hey debug
+31-08-2025 16:14:31 [ERROR] Hey error
+31-08-2025 16:14:31 [WARNING] Hey warning

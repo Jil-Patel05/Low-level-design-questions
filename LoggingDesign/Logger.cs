@@ -36,9 +36,19 @@ namespace LLD_Q.LoggingDesign
 
         public void logMessage(string message, LOG_TYPE logType)
         {
-            string logMessage = this.log.logMessage(message, logType);
-            // Write message to File
-            Console.WriteLine(logMessage);
+            try
+            {
+                string logMessage = this.log.logMessage(message, logType);
+                string filePath = "./logs/log.txt";
+                using (StreamWriter sw = new StreamWriter(filePath, append: true))
+                {
+                    sw.WriteLine(logMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }
