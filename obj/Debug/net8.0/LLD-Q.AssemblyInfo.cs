@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LLD-Q")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+547c6be7c7cdea6fa59070545725ce1d1ee6d157")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35a0d0d69e6d757492af236e2d6db9c3e683f55b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LLD-Q")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LLD-Q")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

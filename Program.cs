@@ -1,4 +1,5 @@
-﻿using LLD_questions.ParkingPlotDesign;
+﻿using LLD_Q.LoggingDesign;
+using LLD_questions.ParkingPlotDesign;
 using Low_Level_Design_questions.ATMDesign;
 using Low_Level_Design_questions.VendingMachineDesign;
 using ParkingPlotDesign;
@@ -59,26 +60,34 @@ namespace Program
             // v.enteredId("1", 1);
 
             // ATM Machine
-            Account acc = new Account("ABCD", 838);
-            Card card = new Card(acc, "1234");
+            // Account acc = new Account("ABCD", 838);
+            // Card card = new Card(acc, "1234");
 
-            ATMMachine am = new ATMMachine();
-            am.addCash((int)CASH_TYPE.CASH_500, 20);
-            am.addCash((int)CASH_TYPE.CASH_200, 20);
-            am.addCash((int)CASH_TYPE.CASH_100, 20);
-            am.addCash((int)CASH_TYPE.CASH_50, 20);
-            am.addCash((int)CASH_TYPE.CASH_20, 20);
-            am.addCash((int)CASH_TYPE.CASH_10, 20);
-            am.addCash((int)CASH_TYPE.CASH_5, 20);
-            am.addCash((int)CASH_TYPE.CASH_2, 20);
-            am.addCash((int)CASH_TYPE.CASH_1, 20);
+            // ATMMachine am = new ATMMachine();
+            // am.addCash((int)CASH_TYPE.CASH_500, 20);
+            // am.addCash((int)CASH_TYPE.CASH_200, 20);
+            // am.addCash((int)CASH_TYPE.CASH_100, 20);
+            // am.addCash((int)CASH_TYPE.CASH_50, 20);
+            // am.addCash((int)CASH_TYPE.CASH_20, 20);
+            // am.addCash((int)CASH_TYPE.CASH_10, 20);
+            // am.addCash((int)CASH_TYPE.CASH_5, 20);
+            // am.addCash((int)CASH_TYPE.CASH_2, 20);
+            // am.addCash((int)CASH_TYPE.CASH_1, 20);
 
-            am.insetCard(card);
-            am.enterPIN("1234");
-            am.selectOperation(OPERATIONS.VIEW_BALANCE);
-            am.insetCard(card);
-            am.enterPIN("1234");
-            am.selectOperation(OPERATIONS.WITHDRAW_CASH, 838);
+            // am.insetCard(card);
+            // am.enterPIN("1234");
+            // am.selectOperation(OPERATIONS.VIEW_BALANCE);
+            // am.insetCard(card);
+            // am.enterPIN("1234");
+            // am.selectOperation(OPERATIONS.WITHDRAW_CASH, 838);
+
+            // Logging system
+            Logger logger = Logger.getInstance();
+            logger.initializeLogger();
+            logger.logMessage("Hey info", LOG_TYPE.INFO);
+            logger.logMessage("Hey debug", LOG_TYPE.DEBUG);
+            logger.logMessage("Hey error", LOG_TYPE.ERROR);
+            logger.logMessage("Hey warning", LOG_TYPE.WARNING);
         }
     }
 
