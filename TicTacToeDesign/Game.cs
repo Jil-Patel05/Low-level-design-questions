@@ -92,6 +92,7 @@ namespace LLD_Q.TicTacToeDesign
                 this.logger.logMessage("Please enter correct coords", LOG_TYPE.ERROR);
                 return false;
             }
+            // We can use strategy here, Like 
             this.currentStep++;
             this.turn ^= 1;
             this.currentPlayer = this.players[this.turn];
