@@ -11,7 +11,7 @@ namespace Low_Level_Design_questions.CarRentalDesign
         DEBIT_CARD_PAYMENT,
         UPI_PAYMENT,
     }
-    public class Payment
+    public class Payment : IPaymentStrategies
     {
         private IPaymentStrategies paymentStrategies;
         public Payment()

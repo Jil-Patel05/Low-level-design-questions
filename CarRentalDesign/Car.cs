@@ -17,7 +17,7 @@ namespace LLD_Q.CarRentalDesign
         public string CarNumber { get; private set; }
         public double CarFuel { get; private set; }
         public double CarPrice { get; private set; }
-        public CAR_SIZE CarSize { get; private set; }
+        public CAR_SIZE CarSize { get; private set; } // pessanerLimit, LuggageLimit
         public Location location { get; private set; }
         public DateTime bookedFrom { get; private set; }
         public DateTime bookedTo { get; private set; }
@@ -49,21 +49,25 @@ namespace LLD_Q.CarRentalDesign
     }
     public class BookedCar
     {
-        public string carNumber;
+        public Car car;
         public User user;
         public DateTime bookingTime;
         public bool isPaymentFullyDone;
         public double bookedCarPrice;
         public double priceGiven;
+        public DateTime carBookedFrom;
+        public DateTime carBookedTo;
 
-        public BookedCar(string carNumber, User user, DateTime bookingTime, bool isPaymentFullyDone, double bookedCarPrice, double priceGiven)
+        public BookedCar(Car car, User user, DateTime bookingTime, bool isPaymentFullyDone, double bookedCarPrice, double priceGiven, DateTime carBookedFrom, DateTime carBookedTo)
         {
-            this.carNumber = carNumber;
+            this.car = car;
             this.user = user;
             this.bookingTime = bookingTime;
             this.isPaymentFullyDone = isPaymentFullyDone;
             this.bookedCarPrice = bookedCarPrice;
             this.priceGiven = priceGiven;
+            this.carBookedFrom = carBookedFrom;
+            this.carBookedTo = carBookedTo;
         }
     }
 }
