@@ -2,59 +2,60 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Low_Level_Design_questions.CarRentalDesign;
 
 namespace LLD_Q.CarRentalDesign
 {
     public class CarRental
     {
-        private IList<Car> cars = new List<Car>();
-        private IList<BookedCar> bookedCars = new List<BookedCar>();
-        private Payment payment;
-
-        public CarRental(Payment payment)
+        public IList<VehicleStore> stores = new List<VehicleStore>();
+        public IList<Vehicle> availableVehicle = new List<Vehicle>();
+        public CarRental()
         {
-            this.payment = payment;
+
         }
 
-        public void addCars(Car car)
+        public void AddVehicleStore(VehicleStore vs)
         {
-            this.cars.Add(car);
+            this.stores.Add(vs);
         }
 
-        public void AddBookedCars(BookedCar car)
+        public void getAllVehicle(VEHICLE_TYPE vt, string city)
         {
-            this.bookedCars.Add(car);
-        }
-
-        private void PrintCars(IList<Car> resultedCars)
-        {
-            foreach (Car item in resultedCars)
+            foreach (VehicleStore item in stores)
             {
-                Console.WriteLine($"Car with number{item.CarNumber} of {item.CarSize} is available, for booking car enter carNumbe to");
+                if (item.location.city == city)
+                {
+                    availableVehicle = item.getAvailableVehicle(vt);
+                }
+            }
+            foreach (Vehicle item in availableVehicle)
+            {
+                Console.WriteLine($"We have vehicle of type{item.vehicleType} available and car number is{item.vehicleNumber}");
             }
         }
 
-        public void searchCar(string city, string state, string country, DateTime pickupTime, DateTime dropTime)
+        public void bookVehicle(string number, User user)
         {
-            IList<Car> resultedCars = this.cars.Where((car) => car.location.City == city && car.location.State == state && car.location.Country == country).ToList();
-            resultedCars = resultedCars.Where((car) => car.bookedTo < pickupTime).ToList();
-            this.PrintCars(resultedCars);
+            Vehicle? v = this.availableVehicle.Where((v) => v.vehicleNumber == number).FirstOrDefault();
+            if (v != null)
+            {
+                // Getting base rent of vehicle
+                double baseRent = v.baseRent;
+                // Perform Payment here using payment strategy which user select;
+                // Make new Registration here
+                // U can make use of Registration manager to manage everything
+                v.bookVehicle();
+            }
         }
 
-        private void bookTheCar(string carModel)
+        public void dropVehicle(string number, User user)
         {
-            // We have to handle concurrency Here
-            // Make sure than we have booked car and carNumber for that car reduced
-            // And now we have to wait for payment to be done
-            this.payment.setPayment(new UpiPayment());
-            this.payment.makePayment(120);
-            // Add car in bookedCar
+            // Make vehicle available
         }
 
-        private void returnCar(string carNumber)
+        public void cancelTheRegistration(Guid guid, User usr)
         {
-
+            // Cancel the registration here            
         }
     }
 }
