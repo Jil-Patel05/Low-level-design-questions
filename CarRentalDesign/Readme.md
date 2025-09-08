@@ -20,3 +20,5 @@ DesignPatterns:-
 
 1. Strategy Pattern for Payment -> User, Carnumber(Race conditions we have to handle)
 2. ObserverPattern for notifying users on car Book
+
+I am using type and city wise filtering of cars
