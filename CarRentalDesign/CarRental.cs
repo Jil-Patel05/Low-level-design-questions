@@ -51,6 +51,7 @@ namespace LLD_Q.CarRentalDesign
         public void dropVehicle(string number, User user)
         {
             // Make vehicle available
+            // And get user notified
         }
 
         public void cancelTheRegistration(Guid guid, User usr)
