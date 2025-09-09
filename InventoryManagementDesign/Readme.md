@@ -19,4 +19,4 @@ Design patterns:-
 1. Singleton
 2. ObserverPattern
 3. Factory pattern to make products
-4. Strategy pattern to set replenishment strategy
+4. Strategy pattern to set replenishment strategy(May be this can become overengineered)
