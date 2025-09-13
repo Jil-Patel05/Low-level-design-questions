@@ -35,5 +35,10 @@ namespace LLD_Q.StackOverflowDesign
         {
             this.trustNessScore--;
         }
+
+        public void notifyUsingEmail()
+        {
+            Console.WriteLine($"User with {this.userName} is notified");
+        }
     }
 }

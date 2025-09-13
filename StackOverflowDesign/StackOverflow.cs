@@ -60,6 +60,7 @@ namespace LLD_Q.StackOverflowDesign
             Response? response = this.currentQuestion?.responses.Where(res => res.guid == guid).FirstOrDefault();
             if (response != null)
             {
+                // Notify Response posting user about this action
                 if (isLike)
                 {
                     response.increaseLikes();
@@ -68,6 +69,9 @@ namespace LLD_Q.StackOverflowDesign
                 {
                     response.decreaseLikes();
                 }
+                // Or u can use Kafka to transfer this whole thing as async
+                // Make sure you are using deadletter queue as well
+                response.user.notifyUsingEmail();
             }
         }
     }
