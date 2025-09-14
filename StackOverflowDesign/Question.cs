@@ -5,20 +5,17 @@ using System.Threading.Tasks;
 
 namespace LLD_Q.StackOverflowDesign
 {
-    public class Question
+    public class Question : Post
     {
-        public Guid guid;
-        public string question;
-        public User user;
         public bool isQuestionOpen;
+        public int votes;
         public IList<Response> responses;
+        public Object votesObject = new Object(); // You can also use Interlock for atomic operations
 
-        public Question(string question, User user)
+        public Question(string question, User user) : base(question, user)
         {
-            this.question = question;
-            this.user = user;
             this.isQuestionOpen = true;
-            this.guid = Guid.NewGuid();
+            responses = new List<Response>();
         }
 
         public void closeQuestion()
@@ -29,6 +26,21 @@ namespace LLD_Q.StackOverflowDesign
         public void addResponse(Response response)
         {
             this.responses.Add(response);
+        }
+
+        public void increaseVotes()
+        {
+            lock (votesObject)
+            {
+                this.votes++;
+            }
+        }
+        public void decreaseVotes()
+        {
+            lock (votesObject)
+            {
+                this.votes--;
+            }
         }
     }
 }

@@ -5,20 +5,15 @@ using System.Threading.Tasks;
 
 namespace LLD_Q.StackOverflowDesign
 {
-    public class Response
+    public class Response : Post
     {
-        public Guid guid;
         public Question question;
-        public string response;
-        public User user;
         public int likes;
         public bool isResponseSelectedByQuesioner;
+        public Object likesObject = new Object(); // You can also use Interlock for atomic operations
 
-        public Response(string response, User user)
+        public Response(string response, User user) : base(response, user)
         {
-            this.guid = Guid.NewGuid();
-            this.response = response;
-            this.user = user;
             this.likes = 0;
             this.isResponseSelectedByQuesioner = false;
         }
@@ -30,11 +25,17 @@ namespace LLD_Q.StackOverflowDesign
 
         public void increaseLikes()
         {
-            this.likes++;
+            lock (likesObject)
+            {
+                this.likes++;
+            }
         }
         public void decreaseLikes()
         {
-            this.likes--;
+            lock (likesObject)
+            {
+                this.likes--;
+            }
         }
 
         public void setResponseAsQuestionerResponse()
