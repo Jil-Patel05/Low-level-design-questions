@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LLD_Q.StackOverflowDesign.enums;
 
 namespace LLD_Q.StackOverflowDesign
 {
@@ -23,18 +24,21 @@ namespace LLD_Q.StackOverflowDesign
             this.question = question;
         }
 
-        public void increaseLikes()
+        public void changeLikes(VOTE vote)
         {
-            lock (likesObject)
+            if (vote == VOTE.UPVOTE)
             {
-                this.likes++;
+                lock (likesObject)
+                {
+                    this.likes++;
+                }
             }
-        }
-        public void decreaseLikes()
-        {
-            lock (likesObject)
+            else
             {
-                this.likes--;
+                lock (likesObject)
+                {
+                    this.likes--;
+                }
             }
         }
 
