@@ -1,6 +1,6 @@
 namespace LLD_Q.StackOverflowDesign.enums
 {
-    public enum ACTIONS
+    public enum EVENT_TYPE
     {
         RESPONSE_UPVOTE,
         RESPONSE_DOWNVOTE,

@@ -14,7 +14,7 @@ namespace LLD_Q.StackOverflowDesign
     {
         public List<Response> sortResponse(IList<Response> responses)
         {
-            List<Response> sortedResponse = responses.OrderBy(elm => elm.likes).ToList();
+            List<Response> sortedResponse = responses.OrderBy(elm => elm.votes).ToList();
             return sortedResponse;
         }
     }

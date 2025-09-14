@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LLD_Q.StackOverflowDesign.enums;
 
 namespace LLD_Q.StackOverflowDesign
 {
@@ -30,7 +31,7 @@ namespace LLD_Q.StackOverflowDesign
         {
             foreach (Question item in questions)
             {
-                Console.WriteLine($"Question -> {item.question} and for response type -> {item.guid}");
+                Console.WriteLine($"Question -> {item.body} and for response type -> {item.guid}");
             }
         }
         public void addResponse(string userResponse, User user, Guid guid)
@@ -45,12 +46,12 @@ namespace LLD_Q.StackOverflowDesign
         {
             foreach (Question item in questions)
             {
-                Console.WriteLine($"Question -> {item.question}");
+                Console.WriteLine($"Question -> {item.body}");
                 IList<Response>? questionResponse = this.questions.FirstOrDefault(q => q.guid == item.guid)?.responses;
                 List<Response> sortedResponses = this.strategy.sortResponse(questionResponse);
                 foreach (Response response in sortedResponses)
                 {
-                    Console.WriteLine($"Response for question is -> {response.response} and for response vote -> {response.guid} and likes is {response.likes}");
+                    Console.WriteLine($"Response for question is -> {response.body} and for response vote -> {response.guid} and likes is {response.votes}");
                 }
             }
         }
@@ -61,17 +62,32 @@ namespace LLD_Q.StackOverflowDesign
             if (response != null)
             {
                 // Notify Response posting user about this action
-                if (isLike)
+                VOTE vote = VOTE.UPVOTE;
+                if (!isLike)
                 {
-                    response.increaseLikes();
+                    vote = VOTE.DOWNVOTE;
                 }
-                else
-                {
-                    response.decreaseLikes();
-                }
+                response.vote(response.user, vote);
                 // Or u can use Kafka to transfer this whole thing as async
                 // Make sure you are using deadletter queue as well
                 response.user.notifyUsingEmail();
+            }
+        }
+
+        public void likeOrDisLikeQuestion(Guid guid, bool isLike)
+        {
+            if (this.currentQuestion != null)
+            {
+                // Notify currentQuestion posting user about this action
+                VOTE vote = VOTE.UPVOTE;
+                if (!isLike)
+                {
+                    vote = VOTE.DOWNVOTE;
+                }
+                this.currentQuestion.vote(this.currentQuestion.user, vote);
+                // Or u can use Kafka to transfer this whole thing as async
+                // Make sure you are using deadletter queue as well
+                this.currentQuestion.user.notifyUsingEmail();
             }
         }
     }

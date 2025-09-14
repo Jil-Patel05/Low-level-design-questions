@@ -2,17 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LLD_Q.StackOverflowDesign.enums;
 
 namespace LLD_Q.StackOverflowDesign
 {
     public class User
     {
+        public Guid guid;
         public string userName;
         public int trustNessScore;
         public IList<Question> questions;
         public IList<Response> responses;
+        public object trustNessObject = new object();
         public User(string userName)
         {
+            this.guid = Guid.NewGuid();
             this.userName = userName;
             this.trustNessScore = 0;
         }
@@ -27,13 +31,19 @@ namespace LLD_Q.StackOverflowDesign
             this.responses.Add(response);
         }
 
-        public void increaseUserTrustNessScore()
+        public void changeTrustNessScore(int number, VOTE vote)
         {
-            this.trustNessScore++;
-        }
-        public void decreaseUserTrustNessScore()
-        {
-            this.trustNessScore--;
+            lock (trustNessObject)
+            {
+                if (vote == VOTE.UPVOTE)
+                {
+                    this.trustNessScore += number;
+                }
+                else
+                {
+                    this.trustNessScore -= number;
+                }
+            }
         }
 
         public void notifyUsingEmail()
