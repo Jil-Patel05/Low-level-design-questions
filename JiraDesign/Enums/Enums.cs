@@ -25,4 +25,15 @@ namespace LLD_Q.JiraDesign.Enums
         DONE,
         REOPEN
     }
+
+    public enum ACTIONS
+    {
+        TASK_CREATED,
+        TASK_DELETED,
+        TASK_DESCRIPTION_CHANGED,
+        PRIOTIY_CHANGED,
+        STATUS_CHANGED,
+        COMMENT_ADDED,
+        TAG_ADDED,
+    }
 }
