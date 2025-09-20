@@ -7,9 +7,15 @@ using LLD_Q.JiraDesign.Enums;
 
 namespace LLD_Q.JiraDesign.Observer
 {
-    public class Event
+    public class Notify
     {
         public ACTIONS action;
         public User user;
+
+        public Notify(User user, ACTIONS action)
+        {
+            this.user = user;
+            this.action = action;
+        }
     }
 }
