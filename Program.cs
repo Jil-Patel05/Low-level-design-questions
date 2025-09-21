@@ -1,4 +1,5 @@
 ﻿using LLD_Q.LoggingDesign;
+using LLD_Q.RateLimiter;
 using LLD_questions.ParkingPlotDesign;
 using Low_Level_Design_questions.ATMDesign;
 using Low_Level_Design_questions.VendingMachineDesign;
@@ -82,12 +83,18 @@ namespace Program
             // am.selectOperation(OPERATIONS.WITHDRAW_CASH, 838);
 
             // Logging system
-            Logger logger = Logger.getInstance();
-            logger.initializeLogger();
-            logger.logMessage("Hey info", LOG_TYPE.INFO);
-            logger.logMessage("Hey debug", LOG_TYPE.DEBUG);
-            logger.logMessage("Hey error", LOG_TYPE.ERROR);
-            logger.logMessage("Hey warning", LOG_TYPE.WARNING);
+            // Logger logger = Logger.getInstance();
+            // logger.initializeLogger();
+            // logger.logMessage("Hey info", LOG_TYPE.INFO);
+            // logger.logMessage("Hey debug", LOG_TYPE.DEBUG);
+            // logger.logMessage("Hey error", LOG_TYPE.ERROR);
+            // logger.logMessage("Hey warning", LOG_TYPE.WARNING);
+
+            RateLimiter rt = new RateLimiter();
+            for (int i = 0; i < 100; i++)
+            {
+                rt.UserRequests(i.ToString());
+            }
         }
     }
 
