@@ -5,6 +5,7 @@ https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter
 Requirements:-
 System should support multiple rate limiting algo
 Implement one rate limiting algo
+Requirements may changes based on may be tracking IP or userId or anythig else
 
 Core Entities:-
 IAlgo -> leakyBucket, TokenBucket, FixedWindow, SlidingWindow logs
